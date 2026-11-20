@@ -9,7 +9,7 @@ register_shutdown_function(function () {
     }
 });
 
-$baseDir = __DIR__ . '/apppp';
+$baseDir = __DIR__ . '/apppp/iclllll';
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 if ($uri === '/' || $uri === '') {
