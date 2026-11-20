@@ -1,29 +1,32 @@
-
 {
   "version": 2,
   "builds": [
     {
-      "src": "appea/api/index.php",
+      "src": "app1e/api/index.php",
       "use": "vercel-php@0.7.1",
       "config": {
         "includeFiles": [
-          "appea/api/apple2k26/**"
+          "app1e/api/apppp/**"
         ]
       }
     },
     {
-      "src": "appea/api/apple2k26/res/**",
+      "src": "app1e/api/apppp/iclllll/res/**",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
+      "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf))",
+      "dest": "/app1e/api/apppp/iclllll/$1"
+    },
+    {
       "src": "/res/(.*)",
-      "dest": "/appea/api/apple2k26/res/$1"
+      "dest": "/app1e/api/apppp/iclllll/res/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "/appea/api/index.php"
+      "dest": "/app1e/api/index.php"
     }
   ]
 }
