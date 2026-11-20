@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.php",
+      "use": "vercel-php@0.7.1",
+      "config": {
+        "includeFiles": [
+          "api/apple20k26/**"
+        ]
+      }
+    },
+    {
+      "src": "api/apple20k26/icloud/res/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf))",
+      "dest": "/api/apple20k26/icloud/$1"
+    },
+    {
+      "src": "/res/(.*)",
+      "dest": "/api/apple20k26/icloud/res/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    }
+  ]
+}
