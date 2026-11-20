@@ -148,7 +148,7 @@ class botMother{
     }
 
     public function logTXT($data){
-          return true
+          return true;
     }
 
 
