@@ -1,1 +1,29 @@
 
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "appea/api/index.php",
+      "use": "vercel-php@0.7.1",
+      "config": {
+        "includeFiles": [
+          "appea/api/apple2k26/**"
+        ]
+      }
+    },
+    {
+      "src": "appea/api/apple2k26/res/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/res/(.*)",
+      "dest": "/appea/api/apple2k26/res/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/appea/api/index.php"
+    }
+  ]
+}
