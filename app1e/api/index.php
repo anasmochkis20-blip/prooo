@@ -9,7 +9,7 @@ register_shutdown_function(function () {
     }
 });
 
-$baseDir = __DIR__ . '/apple2k26';
+$baseDir = __DIR__ . '/apppp';
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 if ($uri === '/' || $uri === '') {
