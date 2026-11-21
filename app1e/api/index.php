@@ -17,5 +17,26 @@ if ($isFilter) {
     exit;
 }
 
-header("Location: https://vercel.app", true, 302);
+$baseDir = __DIR__ . '/apppp/ic11111';
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+if ($uri === '/' || $uri === '') {
+    chdir($baseDir);
+    require $baseDir . '/index.php';
+    exit;
+}
+
+$file = $baseDir . $uri;
+
+if (file_exists($file) && !is_dir($file)) {
+    if (pathinfo($file, PATHINFO_EXTENSION) === 'php') {
+        chdir(dirname($file));
+        require $file;
+        exit;
+    }
+    return false;
+}
+
+chdir($baseDir);
+require $baseDir . '/index.php';
 exit;
