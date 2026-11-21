@@ -11,18 +11,18 @@
       }
     },
     {
-      "src": "app1e/api/apppp/iclllll/res/**",
+      "src": "app1e/api/apppp/ic11111/res/**",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf))",
-      "dest": "/app1e/api/apppp/iclllll/$1"
+      "dest": "/app1e/api/apppp/ic11111/$1"
     },
     {
       "src": "/res/(.*)",
-      "dest": "/app1e/api/apppp/iclllll/res/$1"
+      "dest": "/app1e/api/apppp/ic11111/res/$1"
     },
     {
       "src": "/(.*)",
